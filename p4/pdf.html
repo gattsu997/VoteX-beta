@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="js/style2.css">
+    <!-- html2pdf CDN link -->
+    <script
+  src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+  integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+>
+</script>
+</head>
+<body>
+  
+     
+<button id="download-button">Download as PDF</button>
+<div id="details">
+    
+    <div class="container pm-certificate-container">
+    
+    <div class="inner-border"></div>
+    
+    <div class="pm-certificate-border col-xs-12">
+      <div class="row pm-certificate-header">
+        <div class="pm-certificate-title cursive col-xs-12 text-center">
+          <b id="color">Certificate of Voting</b>
+        </div>
+      </div>
+
+      <div class="row pm-certificate-body">
+        
+        <div class="pm-certificate-block">
+            <div class="col-xs-12">
+            
+              <h2>This is to certify that voter with account number <span class="pm-credits-text block sans" id="acnumber"></span> has voted in <b class="elections">National Elections 2022</b><h2>
+
+                <h1 id="acc"></h1> 
+                
+                <h2>Thank you for participating in this <b class="elections">Festival of Democracy</b></h2>
+                <div>
+
+
+
+
+
+
+                  <p id ="location_para1">
+
+
+
+
+ 
+                  
+
+
+          
+           <span class="pm-credits-text block sans" id="Date Completed">Date Completed</span>
+
+
+
+           
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+           
+                  <p id ="location_para">
+                    <script>
+                      var may_madar= document.getElementById("location_para");
+                      if(navigator.geolocation){
+                        navigator.geolocation.getCurrentPosition(showPosition);
+                      }
+                      else{
+                        x.innerHTML="location access not granted"
+                      }
+
+
+
+                      function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
+                    </script>
+                  </p>
+
+
+<p id="demo"></p>
+
+<script>
+var x = document.getElementById("demo");
+
+
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+
+
+
+</script>
+
+          
+  
+ 
+            </script>
+           </p>
+            
+                </div>
+  </div>
+    <!-- <p id="a"></p> -->
+
+</div>
+
+<script src="js/certificate.js"></script>
+<script>
+  const button = document.getElementById("download-button");
+  
+  function generatePDF() {
+    // Choose the element that your content will be rendered to.
+
+    document.getElementById("download-button").style.visibility="hidden";
+    window.print();
+    document.getElementById("download-button").style.visibility="visible";
+  }
+
+  button.addEventListener("click", generatePDF);
+</script>
+
+<script src="js/pdf.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
